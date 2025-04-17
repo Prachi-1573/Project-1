@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Bookstore</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="Screenshot 2024-11-21 172725.png" alt="Logo" width="70" height="70">
+      </div>
+      <div class="header-text">
+        <h1> Wands And Words </h1>
+        <p>Your one-stop shop for all your reading needs.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+  <nav>
+    <ul class="navbar">
+      <li><a href="sampleindex.html">Home</a></li>
+      <li><a href="sampleindex.html#features">Features</a></li>
+      <li><a href="loginjava.html">Log-in</a></li>
+      <li><a href="#">Bestselling</a></li>
+      <li><a href="#">Latest</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact us.html">Contact Us</a></li>
+      <li class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search books or genres...">
+        <button type="button" id="searchButton">
+          <i class="fas fa-search"></i>
+        </button>
+      </li>
+      
+      
+      <li class="icons">
+        <a href="wishlist - Copy.html" class="icon" id="wishlist-icon"><i class="fas fa-heart"></i></a>
+        <a href="shoppingcart.html" class="icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon"><i class="fas fa-user"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Featuring Books Section -->
+  <section class="featuring-books">
+    <h2>Featuring Genres</h2>
+    <div class="book-genre">
+      <div class="book-card" onclick="addToWishlist('Fiction')">
+        <a href="fictioncatalogue.html"><img src="fiction.png" alt="Fiction" height="80" width="70"></a><br><br>
+        <h3>Fiction</h3><br>
+        <p>Explore the world of Fictional adventures!</p>
+      </div>
+      <div class="book-card" onclick="addToCart('Mystery')">
+        <a href="mysterybooks.html"><img src="mystery.png" alt="Mystery" height="80" width="70"></a><br><br>
+        <h3>Mystery</h3><br>
+        <p>Unravel the mysteries!</p>
+      </div>
+      <div class="book-card" onclick="addToWishlist('Romance')">
+        <a href="#"><img src="romantic.png" alt="Romance" height="80" width="70"></a><br><br>
+        <h3>Romance</h3><br>
+        <p>A journey into love and emotions.</p>
+      </div>
+      <div class="book-card" onclick="addToCart('Sci-Fi')">
+        <a href="#"><img src="scifi.png" alt="Sci-Fi" height="90" width="70"></a><br><br>
+        <h3>Sci-Fi</h3><br>
+        <p>Explore futuristic worlds!</p>
+      </div>
+      <div class="book-card" onclick="addToWishlist('Fiction')">
+        <a href="selfbooks.html"><img src="self.png" alt="Self-Help" height="80" width="70"></a><br><br>
+        <h3>Self-Help</h3><br>
+        <p>The journey within!</p>
+      </div>
+         
+    </div>
+  </section>
+
+  <!-- Trending Books Section -->
+  <section class="trending-books">
+    <h2>Trending Genres</h2>
+    <div class="book-genre">
+      <div class="book-card" onclick="addToWishlist('Thriller')">
+        <img src="thriller.jpg" alt="Thriller">
+        <h3>Thriller</h3>
+        <p>Get your adrenaline pumping!</p>
+      </div>
+      <div class="book-card" onclick="addToCart('Non-fiction')">
+        <img src="nonfiction.jpg" alt="Non-fiction">
+        <h3>Non-fiction</h3>
+        <p>Learn something new!</p>
+      </div>
+      <div class="book-card" onclick="addToWishlist('Fantasy')">
+        <a href="fantasycatalogue.html"><img src="fantasy.png" alt="Fantasy"></a>
+        <h3>Fantasy</h3>
+        <p>Live the magic!</p>
+      </div>
+      <div class="book-card" onclick="addToCart('Biography')">
+       <img src="bio.jpg" alt="Biography">
+        <h3>Biography</h3>
+        <p>Inspire yourself with true stories!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <h2>Contact Us</h2>
+    <p>Email: support@wandsandwords.com</p>
+    <p>Phone: +1 4657 8990 90</p>
+    <p>Address: 123 lane#######</p>
+  
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Wands and Words. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  // Mapping genres to their respective URLs
+  const genres = {
+    Fiction: "fictioncatalogue.html",
+    Mystery: "mysterybooks.html",
+    Romance: "romanticcatalogue.html",
+    "Sci-Fi": "scificatalogue.html",
+    "Self-Help": "selfbooks.html",
+    Thriller: "thrillerbooks.html",
+    "Non-fiction": "nonfictioncatalogue.html",
+    Fantasy: "fantasycatalogue.html",
+    Biography: "biographycatalogue.html",
+  };
+
+  // Mapping books to their genres
+  const books = {
+    "To Kill a Mockingbird": "Fiction",
+    "Sherlock Holmes": "Mystery",
+    "Pride and Prejudice": "Romance",
+    Dune: "Sci-Fi",
+    "Atomic Habits": "Self-Help",
+    "The Silent Patient": "Thriller",
+    Sapiens: "Non-fiction",
+    "Harry Potter": "Fantasy",
+    "The Diary of Anne Frank": "Biography",
+  };
+
+  // Search function triggered by button click
+  document.getElementById("searchButton").addEventListener("click", () => {
+    const searchValue = document.getElementById("searchInput").value.trim();
+    
+    if (!searchValue) {
+      alert("Please enter a search term.");
+      return;
+    }
+
+    // Search for genres
+    if (genres[searchValue]) {
+      alert(`Redirecting to ${searchValue} genre...`);
+      window.location.href = genres[searchValue];
+      return;
+    }
+
+    // Search for books
+    if (books[searchValue]) {
+      const genre = books[searchValue];
+      alert(`Redirecting to the genre for "${searchValue}" (${genre})...`);
+      window.location.href = genres[genre];
+      return;
+    }
+
+    // If no match found
+    alert(`No results found for "${searchValue}".`);
+  });
+
+  // Enable pressing "Enter" to trigger search
+  document.getElementById("searchInput").addEventListener("keypress", (event) = {
+    if (event.key === "Enter") {
+      document.getElementById("searchButton").click();
+    }
+  });
+  </script>
+
+
+  
+    
+  
+
+  
+</body>
+</html>
+
+
+
+

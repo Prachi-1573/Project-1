@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wands and Words - Login</title>
+    <style>
+        /* Reset and global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('bg11.png'); /* Add your background image path here */
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents tiling */   
+        }
+
+        /* Container and box styles */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .login-box {
+            background-color: #e4d9e8;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 550px;
+            text-align: center;
+        }
+
+        /* Heading styles */
+        h1 {
+            font-size: 2rem;
+            color: #2d2d2d;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        /* Input and button styles */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        /* Button styling */
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #a14ad3;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #6c18d3;
+        }
+
+        /* Signup text styles */
+        .signup-text {
+            margin-top: 15px;
+            color: #777777;
+        }
+
+        .signup-text a {
+            color: #7e28ef;
+            text-decoration: none;
+        }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // JavaScript for form validation
+        function validateForm(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            let isValid = true;
+
+            // Email validation
+            if (!validateEmail(email)) {
+                showMessage("Please enter a valid email address.");
+                isValid = false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                showMessage("Password must be at least 6 characters long.");
+                isValid = false;
+            }
+
+            if (isValid) {
+                showMessage("Logging in...", true);
+                setTimeout(() => {
+                // Redirect to sampleindex.html
+                window.location.href = "sampleindex.html";
+            }, 1000);
+            }
+        }
+
+        function validateEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function showMessage(message, success = false) {
+            const messageDiv = document.getElementById("message");
+            messageDiv.textContent = message;
+            messageDiv.style.color = success ? "green" : "red";
+            messageDiv.style.display = "block";
+        }
+
+        function hideMessage() {
+            document.getElementById("message").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("form").addEventListener("submit", validateForm);
+            document.getElementById("email").addEventListener("focus", hideMessage);
+            document.getElementById("password").addEventListener("focus", hideMessage);
+        });
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>WANDS AND WORDS</h1>
+            <h2>Login</h2>
+            <div id="message" style="display: none;"></div> <!-- Message box for feedback -->
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <a href="sampleindex.html">
+                    <button type="submit" class="login-btn">Login</button></a>
+                <p class="signup-text">Don't have an account?<a href="signup.html">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

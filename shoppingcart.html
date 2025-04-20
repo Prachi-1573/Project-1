@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="shoppingcart.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        
+      </div>
+      <div class="header-text">
+        <h1>Wands and Words</h1>
+        <p>Your one-stop shop for all your reading needs</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+  <nav>
+    <ul class="navbar">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Bestselling</a></li>
+      <li><a href="#">Latest</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact us.html">Contact Us</a></li>
+      <li class="search-bar">
+        <input type="text" placeholder="Search books...">
+        <button type="button" onclick="searchBooks()">
+          <i class="fas fa-search"></i>
+        </button>
+      </li>
+      <li class="icons">
+        <a href="wishlist - Copy.html" class="icon" id="wishlist-icon"><i class="fas fa-heart"></i></a>
+        <a href="shoppingcart.html" class="icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon"><i class="fas fa-user"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  
+
+<div class="cart-container">
+    <h1>Shopping Cart</h1>
+
+  
+  <div class="cart-items">
+    <!-- Book Item 1 -->
+    <div class="cart-item">
+      <img src="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360,c_scale,dpr_1.5/jackets/9781408855652.jpg" alt="Book Cover" class="book-cover" width = 100px height="auto">
+      <div class="item-details">
+        <h2><b>Harry Potter and the Philospher's stone</b></h2>
+        <p><b> Author: JK Rowling</b></p></div>
+              <div class="rate">
+                <p style="font-size: 20px">
+                  <span class="font-weight-bold">
+                    <span class="actual price">
+                      <label>₹399</label>
+                    </span>
+                  </span>
+                  <span class="maxprice">
+                    <label>
+                      <del>₹988</del>
+                    </label>
+                  </span>
+                </p>
+      </div>
+
+        <div class="item-price-quantity">
+          <p><b>Quantity</b>: <input type="number" value="1" class="quantity-input"></p>
+          <p style="color: #bc2f2f" > Total price: ₹399 </p>
+          
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <a href = "wishlist - Copy.html">
+        <button class="Wishlist-button">Move to Wishlist</button>
+      </a>
+        <button class="Remove-button">Remove</button>
+        </div>
+      </div>
+
+
+    <!-- Book Item 2 -->
+<!-- <div class="cart-item">
+  <img src="https://m.media-amazon.com/images/I/51lMJWnnRDL.jpg" alt="Book Cover" class="book-cover" style="width: 100px; height: auto; border-radius: 5px;">
+  <div class="item-details">
+    <h2><b>White Nights</b></h2>
+    <p><b>Author: Fyodor Dostoevsky</b></p>
+  </div>
+  <div class="rate">
+    <p style="font-size: 20px; color: black;">
+      <span class="font-weight-bold">
+        <span class="actual price">
+          <label style="font-size: 18px; font-weight: bold;">₹90</label>
+        </span>
+      </span>
+      <span class="maxprice" style="margin-left: 10px; color: gray;">
+        <label>
+          <del>₹150</del>
+        </label>
+      </span>
+    </p>
+  </div>
+  <div class="item-price-quantity">
+    <p><b>Quantity:</b> <input type="number" value="1" class="quantity-input" style="width: 50px; text-align: center; margin-left: 5px;"></p>
+    <p style="color: #bc2f2f; margin-top: 10px;">Total price: ₹90</p>
+  </div>
+  <div class="button-container" style="margin-top: 10px;">
+    <a href="wishlist.html">
+    <button class="Wishlist-button" style="background-color: #d9534f;  color: #fff ; border: 1px solid ; padding: 0.5rem 1rem ; cursor: pointer; border-radius: 3px; transition: background-color 0.3s;">Move to Wishlist</button>
+  </a>
+    <button class="Remove-button" style="background-color: #fff; color: #d9534f; border: 1px; padding: 0.5rem 1rem; cursor: pointer; border-radius: 3px;  transition: background-color 0.3s;">Remove</button>
+  </div>
+</div> -->
+<br><br>
+
+    <!-- Add more book items similarly -->
+<br><br>
+
+    <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-detail">
+          
+        </div>
+        <div class="summary-detail">
+            <p>Order Value:</p>
+            <p class="subtotal"></p>
+          </div>
+        <div class="summary-detail">
+          <p>Tax (10%):</p>
+          <p class="tax">₹39.90</p>
+        </div>
+        <div class="summary-detail to">
+          <p>Total:</p>
+          <p class="total-amount">₹438.90</p>
+        </div>
+  </div>
+
+  <a href="checkout.html">
+    <button class="checkout-button">Proceed to Checkout</button></a>
+    <br<br><br>
+    <a href="homepage.html">
+      <button class="contshop">Continue Shopping</button></a>
+    </div>
+  
+
+  </div>
+
+</div>
+</div>
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h2>Wands and Words</h2>
+      <p>Your online bookstore where magic meets words. Explore books inspired by enchanting stories along with the great wisdom !</p>
+    </div>
+
+    <div class="footer-section links">
+      <h2>Company</h2>
+      <ul>
+        <li><a href="sampleindex.html">Home</a></li>
+        <li><a href="homepage.html">Shop</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="contactus.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h2>Contact Us</h2>
+      <p>Email: support@wandsandwords.com</p>
+      <p>Phone: +1 4657 8990 90</p>
+      <p>Address: 123 lane#######</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2024 Wands and Words. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="shoppingcart2.js"></script>
+
+
+
+</body>
+</html>
+

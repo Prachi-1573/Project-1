@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalogue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cea3f4;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #6a4c9c; /* Purple background */
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.header-text h1 {
+  font-size: 2em;
+}
+
+.header-text p {
+  font-size: 1.2em;
+}
+
+.logo img {
+  width: 80px; /* Adjust based on your logo size */
+}
+
+nav {
+  background-color: #5e3d89; /* Lighter purple */
+  padding: 10px 5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+.navbar li a:hover {
+  color: #d1c3e4;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.search-bar input {
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  background-color: #6a4c9c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #d1c3e4;
+}
+
+.icons a {
+  margin-left: 15px;
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.icons a:hover {
+  color: #d1c3e4;
+}
+
+.icon .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+/* Welcome Section */
+.fantasy-books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px;
+    background-color: #ab8ff9; /* Light purple */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .fantasybooks-content {
+    max-width: 600px;
+    z-index: 1;
+  }
+  
+  .fantasy-content h1 {
+    font-size: 3rem;
+    color: #430c68d4;
+  }
+  
+        /* Book Catalog */
+        .catalog-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Four columns */
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .book-card {
+            background-color: rgb(193, 130, 232);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .book-card:hover {
+            transform: scale(1.05);
+        }
+        .book-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .book-content {
+            padding: 15px;
+        }
+        .book-content h3 {
+            color: #442f7e;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .book-content p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 8px 15px;
+            color: white;
+            background-color: #442f7e;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #5e3d89;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .catalog-container {
+                grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+            }
+        }
+        @media (max-width: 768px) {
+            .catalog-container {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="Screenshot 2024-11-21 172725.png" alt="Logo" width="70" height="70">
+      </div>
+      <div class="header-text">
+        <h1> Wands And Words </h1>
+        <p>Your one-stop shop for all your reading needs.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+  <nav>
+    <ul class="navbar">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="sampleindex.html#features">Features</a></li>
+      <li><a href="loginjava.html">Log-in</a></li>
+      <li><a href="#">Bestselling</a></li>
+      <li><a href="#">Latest</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li class="search-bar">
+        <input type="text" placeholder="Search books...">
+        <button type="button" onclick="searchBooks()">
+          <i class="fas fa-search"></i>
+        </button>
+      </li>
+      <li class="icons">
+        <a href="wishlist - Copy.html" class="icon" id="wishlist-icon"><i class="fas fa-heart"></i></a>
+        <a href="shoppingcart.html" class="icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon"><i class="fas fa-user"></i></a>
+      </li>
+    </ul>
+  </nav>
+<section id="fantasy" class="fantasy-books">
+    <div class="fantasybook-content">
+        <h1>MYSTERY</h1>
+    </div>
+</section>
+  
+
+
+    <!-- Book Catalog -->
+    <section class="catalog-container">
+        <!-- Book Card 1 -->
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193008.png" alt="Book 1">
+            <div class="book-content">
+                <h3>The Girl with the Dragon Tattoo</h3>
+                <p>Stieg Larsson</p>
+                <p><h6>This crime thriller follows journalist Mikael Blomkvist and brilliant hacker Lisbeth Salander as they investigate a wealthy family’s dark secrets in Sweden.....</h6></p>
+                <a href="" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Book Card 2 -->
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193033.png" alt="Book 2">
+            <div class="book-content">
+                <h3>The Silent Patient</h3>
+                <p>Alex Michaelides</p>
+                <p><h6>This psychological thriller tells the story of Alicia Berenson, a famous painter who becomes mute after being accused of her husband’s murder.....</h6></p>
+                <a href="book1.html" class="read-more">Read More</a>
+            </div>
+        </div>
+        
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193056.png" alt="Book 3">
+            <div class="book-content">
+                <h3>Big Little Lies </h3>
+                <p>Liane Moriarty</p>
+                <p><h6>Set in a suburban Australian town, this novel explores the intersecting lives of three women dealing with personal secrets, relationships, and the pressures of motherhood....</h6></p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="book-card">
+            <img src="Screenshot 2024-12-02 171502.png" alt="Book 4">
+            <div class="book-content">
+                <h3>White Nights</h3>
+                <p>Fyodor Dostoevsky</p>
+                <p><h6>White Nights is a poetic story of a nameless narrator, deeply in love with the night and its solitude. This story reflects on themes of human isolation, dreams, and the desire for companionship. ...</h6></p>
+                <a href="bookdetails.html" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Add more book cards up to 16 -->
+         <!-- Book Card 1 -->
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193143.png" alt="Beloved">
+            <div class="book-content">
+                <h3>The Da Vinci Code</h3>
+                <p>Dan Brown</p>
+                <p><h6>A famous symbologist, Robert Langdon, finds himself in a high-stakes chase across Europe to uncover a secret guarded by an ancient society....</h6></p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Book Card 2 -->
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193206.png" alt="Book 2">
+            <div class="book-content">
+                <h3>In The Woods</h3>
+                <p>Tana French</p>
+                <p><h6>In this atmospheric mystery, detective Rob Ryan is haunted by a traumatic childhood memory as he investigates the murder of a young girl in a small Irish town....</h6></p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193223.png" alt="Book 3">
+            <div class="book-content">
+                <h3>The Woman in the Window</h3>
+                <p>A.J. Finn</p>
+                <p><h6>Agoraphobic Anna Fox spends her days watching her neighbors from her window. When she witnesses what she believes to be a violent crime, she spirals into paranoia and self-doubt, leading her to question her own sanity in this Hitchcockian psychological thriller...</h6>
+
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193243.png" alt="Book 4">
+            <div class="book-content">
+                <h3>Sharp Objects</h3>
+                <p>Gillian Flynn</p>
+                <p><h6>Journalist Camille Preaker returns to her hometown to cover the murder of two young girls. As she digs deeper, her troubled past resurfaces, and she confronts disturbing truths about her family and herself...</h6></p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Book Card 1 -->
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193306.png" alt="Book 1">
+            <div class="book-content">
+                <h3>The Reversal</h3>
+                <p>Michael Connelly</p>
+                <p><h6>Defense attorney Mickey Haller takes on the role of prosecutor in a high-profile case involving a man previously convicted of child murder...</h6>></p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        
+        <div class="book-card">
+            <img src="Screenshot 2024-11-24 193324.png" alt="Book 4">
+            <div class="book-content">
+                <h3>The Cuckoo’s Calling </h3>
+                <p>Robert Galbraith</p>
+                <p><h6>Private investigator Cormoran Strike is hired to look into the apparent suicide of supermodel Lula Landry. His investigation reveals the hidden lives of the rich and famous, as well as dark secrets in Lula’s life...</h6></p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

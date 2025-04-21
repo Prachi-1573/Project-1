@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Wands and Words</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Add your existing styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        /* All existing styles are unchanged */
+        /* For brevity, not repeating the entire style section */
+        header {
+    background-color: #6a4c9c; /* Purple background */
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .header-text h1 {
+    font-size: 2em;
+  }
+  
+  .header-text p {
+    font-size: 1.2em;
+  }
+  
+  .logo img {
+    width: 80px; /* Adjust based on your logo size */
+  }
+  
+  nav {
+    background-color: #5e3d89; /* Lighter purple */
+    padding: 10px 5%;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+  }
+  
+  .navbar li {
+    margin: 0 15px;
+  }
+  
+  .navbar li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  
+  .navbar li a:hover {
+    color: #d1c3e4;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+  
+  .search-bar input {
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    width: 200px;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    background-color: #6a4c9c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #d1c3e4;
+  }
+  
+  .icons a {
+    margin-left: 15px;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .icons a:hover {
+    color: #d1c3e4;
+  }
+  
+  .icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+
+        .checkout-section {
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4a2a8b;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, textarea:hover, select:hover {
+            border-color: #4a2a8b;
+            box-shadow: 0 0 5px rgba(74, 42, 139, 0.5);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .cart-summary {
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .payment-methods {
+            margin: 20px 0;
+        } 
+        .payment-logo {
+            width: 40px;
+            height: 25px;
+            margin-left: 10px;
+        }
+        
+
+        button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px;
+            background: linear-gradient(90deg, #4a2a8b, #6b5fb3);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background: #4a2a8b;
+            transform: translateY(-2px);
+        }
+        .footer {
+  background-color: #d9d1dd;
+  color: #0a0701;
+  padding: 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0d4e4;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h2 {
+  color: #0e0d0e;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  color: #060008;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #0a080a;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 18px;
+
+}
+
+.footer-section ul li a:hover {
+  color: #85579e;
+  transform: scale(1.03);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 15px;
+  color: #e0d4e4;
+}
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modal-content h3 {
+            margin: 0 0 15px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .modal-buttons button {
+            width: 100px;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-buttons .yes {
+            background-color: #4a2a8b;
+            color: #fff; /* White text */
+        }
+
+        .modal-buttons .no {
+            background-color: #ccc;
+            color: #fff; /* White text */
+        }
+
+        .modal-buttons .yes:hover {
+            background-color: #6b5fb3;
+        }
+
+        .modal-buttons .no:hover {
+            background-color: #999;
+        }
+
+        /* Validation Modal */
+        #validationModal .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #validationModal button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #4a2a8b;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #validationModal button:hover {
+            background-color: #6b5fb3;
+        }
+        /* Success Modal */
+        #successModal .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #successModal button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #4a2a8b;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #successModal button:hover {
+            background-color: #6b5fb3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="Screenshot 2024-11-21 172725.png" alt="Logo" width="70" height="70">
+            </div>
+            <div class="header-text">
+                <h1> Wands And Words </h1>
+                <p>Your one-stop shop for all your reading needs.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="sampleindex.html">Home</a></li>
+            <li><a href="sampleindex.html#features">Features</a></li>
+            <li><a href="login.html">Log-in</a></li>
+            <li><a href="#">Bestselling</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li class="search-bar">
+                <input type="text" placeholder="Search books...">
+                <button type="button" onclick="searchBooks()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </li>
+            <li class="icons">
+                <a href="#" class="icon" id="wishlist-icon"><i class="fas fa-heart"></i></a>
+                <a href="#" class="icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="checkout-section">
+        <h2>Review Your Cart</h2>
+        <div class="cart-summary">
+            <div class="cart-item">
+                <span>Book 1: *Harry Potter and Philosopher's Stone*</span>
+                <span>₹399</span>
+            </div>
+            <div class="cart-item">
+                <span>Book 2: *White Nights*</span>
+                <span>₹90</span>
+            </div>
+            <div class="cart-total">
+                Total: ₹489
+            </div>
+        </div>
+
+        <form id="checkoutForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" name="address" rows="3" placeholder="123 Book Lane, Sector-35D, Chandigarh" required></textarea>
+
+            <h2>Payment Options</h2>
+            <div class="payment-methods">
+                <label>
+                    <input type="radio" name="payment" value="credit" required>
+                    Credit Card <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1024px-Visa_Inc._logo.svg.png" alt="Visa" class="payment-logo">
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="payment" value="upi" required>
+                    UPI (Unified Payments Interface)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="payment" value="cod" required>
+                    Cash on Delivery
+                </label>
+            </div>
+            <button type="button" id="placeOrderBtn">Place Order</button>
+        </form>
+    </section>
+
+    <!-- Validation Modal -->
+    <div id="validationModal" class="modal">
+        <div class="modal-content">
+            <h3>Please fill out all the fields and select a payment method.</h3>
+            <button class="no" id="closeValidation">Close</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h3>Are you sure you want to place the order?</h3>
+            <div class="modal-buttons">
+                <button>
+                <a id="yesButton" class="yes">Yes</a></button>
+                <button class="no" id="cancelOrder">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <footer class="footer">
+            <div class="footer-content">
+              <div class="footer-section about">
+                <h2>Wands and Words</h2>
+                <p>Your online bookstore where magic meets words. Explore books inspired by enchanting stories along with the great wisdom !</p>
+              </div>
+          
+              <div class="footer-section links">
+                <h2>Company</h2>
+                <ul>
+                  <li><a href="sampleindex.html">Home</a></li>
+                  <li><a href="#">Shop</a></li>
+                  <li><a href="contact us.html">Contact</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+              </div>
+          
+              <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: wandsandwords@gmail.com</p>
+                <p>Phone: +91-85569-24900</p>
+                <p>Address: 123 Book Lane, Sector-35D, Chandigarh, Punjab</p>
+              </div>
+            </div>
+          
+            <div class="footer-bottom">
+              <p>&copy; 2024 Wands and Words. All Rights Reserved.</p>
+            </div>
+    </footer>
+
+    <script>
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const validationModal = document.getElementById('validationModal');
+        const checkoutForm = document.getElementById('checkoutForm');
+        const closeValidation = document.getElementById('closeValidation');
+        const yesButton = document.getElementById('yesButton');
+        const cancelOrder = document.getElementById('cancelOrder');
+
+        placeOrderBtn.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const payment = document.querySelector('input[name="payment"]:checked');
+
+            if (!name || !email || !phone || !address || !payment) {
+                validationModal.style.display = 'flex';
+                return;
+            }
+
+            if (payment.value === "upi") {
+                yesButton.href = "payment-through-upi.html";
+            } else if (payment.value === "credit") {
+                yesButton.href = "payment-through-credit-card.html";
+            } else {
+                yesButton.href = "checkout.html"; 
+            }
+
+            confirmationModal.style.display = 'flex';
+        });
+
+        closeValidation.addEventListener('click', () => {
+            validationModal.style.display = 'none';
+        });
+
+        cancelOrder.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === confirmationModal || event.target === validationModal) {
+                validationModal.style.display = 'none';
+                confirmationModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+

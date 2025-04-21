@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale=1.0">
+  <title>Wands and Words</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link rel= "stylesheet" href="bookdetails.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+      
+      </div>
+      <div class="header-text">
+        <h1>Wands and Words</h1>
+        <p>Your one-stop shop for all your reading needs</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+  <nav>
+    <ul class="navbar">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Bestselling</a>
+        <li><a href="#">Latest</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contact us.html">Contact Us</a></li>
+        <li class="search-bar">
+          <input type="text" placeholder="Search books...">
+          <button type="button" onclick="searchBooks()">
+            <i class="fas fa-search"></i>
+          </button>
+        </li>
+        <li class="icons">
+          <a href="wishlist - Copy.html" class="icon" id="wishlist-icon"><i class="fas fa-heart"></i></a>
+          <a href="shoppingcart.html" class="icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#" class="icon"><i class="fas fa-user"></i></a>
+        </li>
+      </ul>
+    </nav>
+    
+
+    <div class="container">
+        <!-- Section 1: Book Details -->
+        <section class="section book-details">
+            <div class="book-info">
+                <img src= "https://m.media-amazon.com/images/I/51lMJWnnRDL.jpg" alt ="book cover" width = "200" height="250">
+                    <h1>White Nights</h1>
+                    <p>By: <strong>Fyodor Dostoevsky</strong></p>
+                    <p class="ratings"><span class="stars">★★★★★</span> | 6 Reviews</p>
+                    <p class="price">
+                        <span class="current-price">₹90</span>
+                        <span class="mrp">₹150</span>
+                        <span class="discount">(Save ₹60 - 40%)</span>
+                    </p>
+                    <p class="availability">Available | Ships in <strong>2-4 Business Days</strong></p>
+                    <div class="action-buttons">
+                        <label for="quantity">Quantity:</label>
+                        <select id="quantity">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                        </select>
+                        <a href = "shoppingcart.html">
+                        <button class="add-to-cart">Add to Cart</button></a>
+                        <button class="buy-now">Buy Now</button>
+                        <a href="wishlist - Copy.html">
+                        <button class="wishlist">Add to Wishlist</button>
+                      </a>
+                    </div>
+                </div>
+            </div>
+          
+
+         
+                          
+        </section>
+
+        <hr>
+
+        <!-- Section 2: About the Book -->
+        <section class="section about-book">
+            <h2>About the Book</h2>
+            <p>
+                White Nights is a poetic story of a nameless narrator, deeply in love with the night and its solitude. This story reflects on themes of human isolation, dreams, and the desire for companionship.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Section 3: Bestsellers -->
+        <section class="section bestsellers">
+            <h2>Bestsellers</h2>
+            <div class="card-carousel">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTU1MzgyMDMtMzBlZS00YzczLThmYWEtMjU3YmFlOWEyMjE1XkEyXkFqcGc@._V1_.jpg" alt="Harry Potter" width = "230" height="350">
+                    <p><strong>Harry potter and Philosopher's Stone</strong></p>
+                    <p>J. K. Rowling</p>
+                </div>
+                <div class="card">
+                    <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781471173936/the-great-gatsby-9781471173936_hr.jpg" alt="The Great Gatsby" width = "230"  height="350 ">
+                    <p><strong>The Great Gatsby</strong></p>
+                    <p>F.Scott Fitzgerald</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.thenile.io/r1000/9780452262935.jpg?r=5e7d61110b596" alt="Book 3" width = "230" height="350">
+                    <p><strong> 1984 </strong></p>
+                    <p>George Orwell</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Section 4: Product Details -->
+        <section class="section product-details">
+            <h2>Product Details</h2>
+            <ul>
+                <li>Publisher: Penguin Books</li>
+                <li>Language: English</li>
+                <li>ISBN: 1234567890</li>
+                <li>Pages: 200</li>
+                <li>Genre: Classic Fiction</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- Section 5: Related Categories -->
+        <section class="section related-categories">
+            <h2>Related Categories</h2>
+            <div class="categories">
+                <span>Classic Fiction</span>
+                <span>Russian Literature</span>
+                <span>Philosophical Fiction</span>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Section 6: Customer Reviews -->
+        <section class="section reviews">
+            <h2>Customer Reviews</h2>
+            <div class="star-rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <textarea placeholder="Write your review here..."></textarea>
+            <button class="submit-review">Submit Review</button>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h2>Wands and Words</h2>
+            <p>Your online bookstore where magic meets words. Explore books inspired by enchanting stories along with the great wisdom !</p>
+          </div>
+      
+          <div class="footer-section links">
+            <h2>Company</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@wandsandwords.com</p>
+            <p>Phone: +1 4657 8990 90</p>
+            <p>Address: 123 lane#######</p>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2024 Wands and Words. All Rights Reserved.</p>
+        </div>
+      </footer>
+      
+      <script src="bookdetails3.js"></script>
+      
+      
+      </body>
+      </html>

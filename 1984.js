@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reviewTextarea.value = '';
         selectedRating = 0;
         starRating.forEach((s) => s.classList.remove('selected'));
-        alert('Thank you for your review!');
+        alert('Thank you for your precious time!');
 
         // Add delete functionality to the delete button
         const deleteButton = newReview.querySelector('.delete-review');

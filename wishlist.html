@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="wishlist - Copy.css">
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+      <!-- Header Section -->
+      <header>
+        <div class="header-container">
+          <div class="logo">
+            
+          </div>
+          <div class="header-text">
+            <h1>Online Bookstore</h1>
+            <p>Your one-stop shop for all your reading needs</p>
+          </div>
+        </div>
+      </header>
+    
+      <!-- Navbar Section -->
+      <nav>
+        <ul class="navbar">
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Bestselling</a></li>
+          <li><a href="#">Latest</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li class="search-bar">
+            <input type="text" placeholder="Search books...">
+            <button type="button" onclick="searchBooks()">
+              <i class="fas fa-search"></i>
+            </button>
+          </li>
+          <li class="icons">
+            <a href="wishlist - Copy.html" class="icon" id="wishlist-icon"><i class="fas fa-heart" data-count="0"></i></a>
+            <a href="shoppingcart.html" class="icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#" class="icon"><i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+      </nav>
+
+
+  <div class="wishlist-container">
+    <header class="wishlist-header">
+      <h1>My Wishlist</h1>
+      <button class="share-btn">Share Wishlist</button>
+    </header>
+    
+    <div class="wishlist-tools">
+      <input type="text" class="search-bar" placeholder="Search books...">
+      <select class="sort-dropdown">
+        <option value="price-low-high">Price: Low to High</option>
+        <option value="price-high-low">Price: High to Low</option>
+        <option value="name-a-z">Name: A-Z</option>
+        <option value="name-z-a">Name: Z-A</option>
+      </select>
+    </div>
+    
+    <div class="wishlist-grid">
+      <!-- Book 1 -->
+      <div class="wishlist-item">
+        <div class="book-image">
+          <img src="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360,c_scale,dpr_1.5/jackets/9781408855652.jpg" alt="Harry Potter">
+        </div>
+        <div class="book-info">
+          <h2>Harry Potter and Philospher's Stone</h2>
+          <p><strong>By:</strong> J.K Rowling</p>
+          <p><strong>Price:</strong> ₹<span class="price" data-price="399">399</span> <del>₹998</del></p>
+          <p><strong>Offers:</strong> 31% off</p>
+          <p><strong>Stock:</strong> In Stock</p>
+          <p><strong>Binding:</strong> Paperback</p>
+          <div class="quantity-container">
+            <button class="quantity-btn decrease">-</button>
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="quantity-btn increase">+</button>
+          </div>
+          <p>Total: ₹<span class="total-price">399</span></p>
+        </div>
+        <div class="wishlist-actions">
+          <a href = "shoppingcart.html">
+          <button class="add-to-cart">Add to Cart</button>
+        </a>
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+      
+      <!-- Book 2 -->
+      <div class="wishlist-item">
+        <div class="book-image">
+          <img src="https://m.media-amazon.com/images/I/51lMJWnnRDL.jpg" alt="White Nights">
+        </div>
+        <div class="book-info">
+          <h2>White Nights</h2>
+          <p><strong>By:</strong> Fyodor Dostoyevsky</p>
+          <p><strong>Price:</strong> ₹<span class="price" data-price="90">90</span> <del>₹150</del></p>
+          <p><strong>Offers:</strong> 40% off</p>
+          <p><strong>Stock:</strong> In Stock</p>
+          <p><strong>Binding:</strong> Paperback</p>
+          <div class="quantity-container">
+            <button class="quantity-btn decrease">-</button>
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="quantity-btn increase">+</button>
+          </div>
+          <p>Total: ₹<span class="total-price">90</span></p>
+        </div>
+        <div class="wishlist-actions">
+          <a href = "shoppingcart.html">
+          <button class="add-to-cart">Add to Cart</button>
+        </a>
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="wishlist-footer">
+      <button class="save-for-later">Save for Later</button>
+      <p>Total Items: <span class="total-items">2</span></p>
+      <p>Total Value: ₹<span class="total-value">489</span></p>
+    </footer>
+  </div>
+  <div>
+  <div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Wands and Words</h2>
+        <p>Your online bookstore where magic meets words. Explore books inspired by enchanting stories along with the great wisdom !</p>
+      </div>
+  
+      <div class="footer-section links">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="contact us.html">Contact</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@wandsandwords.com</p>
+        <p>Phone: +1 4657 8990 90</p>
+        <p>Address: 123 lane#######</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2024 Wands and Words. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+</div>
+  
+
+  <script src="wishlist - Copy.js"></script>
+</body>
+</html>

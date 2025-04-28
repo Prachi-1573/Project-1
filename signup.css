@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('DALL·E 2024-11-21 17.11.34 - A cozy, softly blurred library background with tall wooden bookshelves filled with books, illuminated by a gentle purple and warm light. The atmospher.webp') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff; /* optional, for contrast */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.signup-box {
+    background-color: #ecd0a5;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: center;
+}
+
+.signup-box h2 {
+    color: #40025e;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.signup-box h3 {
+    color: #5b0484;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.signup-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left; 
+}
+
+.signup-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4A2C7A;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-box button:hover {
+    background-color: #6A49A3;
+}
+
+.signup-box .login-link {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.signup-box .login-link a {
+    color: #4A2C7A;
+    text-decoration: none;
+}
+
+.signup-box .login-link a:hover {
+    text-decoration: underline;
+}

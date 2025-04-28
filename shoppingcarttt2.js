@@ -1,3 +1,4 @@
+//JS for cart
 document.addEventListener("DOMContentLoaded", () => {
   const cartContainer = document.querySelector(".cart-items");
   const totalItemsElement = document.querySelector(".cart-summary .subtotal");

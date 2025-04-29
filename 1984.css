@@ -10,7 +10,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
+/*header starts*/
 header {
     background-color: #6a4c9c; 
     padding: 20px 5%;
@@ -130,7 +130,7 @@ hr {
     background-color: #ddd;
     margin: 20px 0;
 }
-
+/*book details styling starts*/
 .book-details {
     display: flex;
     align-items: flex-start;
@@ -213,7 +213,7 @@ hr {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
+/*cart code starts*/
 .add-to-cart {
     background-color: #28a745;
     color: white;
@@ -405,7 +405,7 @@ textarea {
   background-color: #c9302c;
 }
 
-
+/*footer code starts*/
 
 .footer {
     background-color: #d9d1dd;

@@ -5,4 +5,8 @@ It is created to Upload our Project work for the subject:
 The project title is :
  Online Bookstore Website
 The project is made with html,css and javascript.
+Hosting platform: Github
+Tool: git
+
+
 

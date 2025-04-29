@@ -1,4 +1,5 @@
 Hi there...
+Our group name is the "Algorithms"
 Welcome to our Repository Project-1.
 It is created to Upload our Project work for the subject:
  Source Code Management.

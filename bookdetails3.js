@@ -3,7 +3,7 @@ function searchBooks() {
     const searchQuery = document.querySelector('.search-bar input').value.toLowerCase();
     alert(`Search for: ${searchQuery}`);
 }
-
+/*add to cart functionality*/
 // Add to Cart Functionality
 document.addEventListener("DOMContentLoaded", function () {
     // Locate elements based on your HTML structure

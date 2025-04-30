@@ -1,4 +1,4 @@
-// Wait for DOM to load
+// Wait for DOM to load,,
 document.addEventListener("DOMContentLoaded", () => {
     // Add to Cart functionality
     const addToCartButton = document.querySelector(".add-to-cart");

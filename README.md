@@ -18,4 +18,3 @@ We use GitHub for repository management, and our commits follow a standardized f
 
 
 
-

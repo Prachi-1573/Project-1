@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Dynamic Bestsellers Carousel
-
+/*dynamic bestsellers carousel*/
     const bestsellers = [
         { title: "The Psychology of Money", author: "Morgan Housel", image: "https://m.media-amazon.com/images/I/81Dky+tD+pL._AC_UF1000,1000_QL80_.jpg" },
         { title: "Rich Dad Poor dad", author: "Robert T.Kiyosaki", image: "https://bookosmia.com/wp-content/uploads/2021/12/Rich-Dad-Poor-Dad.jpg" },
